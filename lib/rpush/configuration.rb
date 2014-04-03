@@ -5,6 +5,7 @@ module Rpush
 
   def self.configure
     yield config if block_given?
+    Rpush.init_orm
   end
 
   CONFIG_ATTRS = [:foreground, :push_poll, :feedback_poll, :embedded,
@@ -57,7 +58,7 @@ module Rpush
       else
         self.foreground = false
       end
-
+      self.store = :active_record
       self.push_poll = 2
       self.feedback_poll = 60
       self.check_for_errors = true

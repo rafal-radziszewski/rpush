@@ -76,7 +76,9 @@ module Rpush
       end
 
       def to_binary(options = {})
-        id_for_pack = options[:for_validation] ? 0 : id
+        id_for_pack = 0
+        
+        id_for_pack = (Rpush.config.store == :mongoid ? validation_id : id) if options[:for_validation]
         [1, id_for_pack, expiry, 0, 32, device_token, payload_size, payload].pack("cNNccH*na*")
       end
     end

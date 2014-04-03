@@ -2,6 +2,9 @@
 
  Rpush.configure do |config|
 
+  # Setup orm backend (default to active_record)
+  # config.store = :mongoid
+  
   # Run in the foreground?
   # config.foreground = false
 
