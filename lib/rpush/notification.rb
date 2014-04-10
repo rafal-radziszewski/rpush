@@ -44,7 +44,7 @@ module Rpush
       field :type, type: String
       field :collapse_key, type: String
       field :delay_while_idle, type: Boolean, default: false
-      field :registration_ids, type: String
+      field :registration_ids, type: Array
       field :retries, type: Integer, default: 0
       field :uri, type: String
       field :fail_after, type: DateTime
