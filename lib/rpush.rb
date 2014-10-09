@@ -1,4 +1,4 @@
-require 'active_record'
+#require 'active_record'
 require 'multi_json'
 require 'pry'
 
@@ -8,7 +8,7 @@ module Rpush
     require 'rails'
     ::Rails::VERSION::STRING < '4'
   end
-  
+
   def self.jruby?
     defined? JRUBY_VERSION
   end
@@ -36,7 +36,7 @@ module Rpush
   def self.logger=(logger)
     @logger = logger
   end
-  
+
   def self.init_orm
     if Rpush.config.store == :active_record
       require 'rpush/orm/active_record'
