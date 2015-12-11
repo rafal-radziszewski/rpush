@@ -1,28 +1,36 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "rpush/version"
+# stub: rpush 1.0.0 ruby lib
 
 Gem::Specification.new do |s|
-  s.name        = "rpush"
-  s.version     = Rpush::VERSION
-  s.authors     = ["Ian Leitch"]
-  s.email       = ["port001@gmail.com"]
-  s.homepage    = "https://github.com/rpush/rpush"
-  s.summary     = %q{Professional grade APNs and GCM for Ruby}
-  s.description = %q{Professional grade APNs and GCM for Ruby}
-  s.license    = "MIT"
+  s.name = "rpush"
+  s.version = "1.0.0"
 
-  s.files         = `git ls-files -- lib README.md CHANGELOG.md LICENSE`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features,config}`.split("\n")
-  s.executables   = `git ls-files -- bin`.split("\n").map{ |f| File.basename(f) }
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
+  s.authors = ["Ian Leitch"]
+  s.date = "2015-04-23"
+  s.description = "Professional grade APNs and GCM for Ruby"
+  s.email = ["port001@gmail.com"]
+  s.executables = ["rpush"]
+  s.files = ["CHANGELOG.md", "LICENSE", "README.md", "bin/rpush", "config/database.yml", "lib/autoinc.rb", "lib/autoinc/incrementor.rb", "lib/autoinc/version.rb", "lib/generators/rpush_generator.rb", "lib/generators/templates/add_adm.rb", "lib/generators/templates/add_alert_is_json_to_rapns_notifications.rb", "lib/generators/templates/add_app_to_rapns.rb", "lib/generators/templates/add_fail_after_to_rpush_notifications.rb", "lib/generators/templates/add_gcm.rb", "lib/generators/templates/add_rpush.rb", "lib/generators/templates/add_wpns.rb", "lib/generators/templates/create_rapns_apps.rb", "lib/generators/templates/create_rapns_feedback.rb", "lib/generators/templates/create_rapns_notifications.rb", "lib/generators/templates/rename_rapns_to_rpush.rb", "lib/generators/templates/rpush.rb", "lib/rpush.rb", "lib/rpush/TODO", "lib/rpush/adm/app.rb", "lib/rpush/adm/data_validator.rb", "lib/rpush/adm/notification.rb", "lib/rpush/apns/app.rb", "lib/rpush/apns/binary_notification_validator.rb", "lib/rpush/apns/device_token_format_validator.rb", "lib/rpush/apns/feedback.rb", "lib/rpush/apns/notification.rb", "lib/rpush/apns_feedback.rb", "lib/rpush/app.rb", "lib/rpush/configuration.rb", "lib/rpush/daemon.rb", "lib/rpush/daemon/adm.rb", "lib/rpush/daemon/adm/delivery.rb", "lib/rpush/daemon/apns.rb", "lib/rpush/daemon/apns/certificate_expired_error.rb", "lib/rpush/daemon/apns/delivery.rb", "lib/rpush/daemon/apns/disconnection_error.rb", "lib/rpush/daemon/apns/feedback_receiver.rb", "lib/rpush/daemon/app_runner.rb", "lib/rpush/daemon/batch.rb", "lib/rpush/daemon/constants.rb", "lib/rpush/daemon/delivery.rb", "lib/rpush/daemon/delivery_error.rb", "lib/rpush/daemon/dispatcher/http.rb", "lib/rpush/daemon/dispatcher/tcp.rb", "lib/rpush/daemon/dispatcher_loop.rb", "lib/rpush/daemon/dispatcher_loop_collection.rb", "lib/rpush/daemon/feeder.rb", "lib/rpush/daemon/gcm.rb", "lib/rpush/daemon/gcm/delivery.rb", "lib/rpush/daemon/interruptible_sleep.rb", "lib/rpush/daemon/loggable.rb", "lib/rpush/daemon/reflectable.rb", "lib/rpush/daemon/retry_header_parser.rb", "lib/rpush/daemon/retryable_error.rb", "lib/rpush/daemon/service_config_methods.rb", "lib/rpush/daemon/store/active_record.rb", "lib/rpush/daemon/store/active_record/reconnectable.rb", "lib/rpush/daemon/store/mongoid.rb", "lib/rpush/daemon/tcp_connection.rb", "lib/rpush/daemon/too_many_requests_error.rb", "lib/rpush/daemon/wpns.rb", "lib/rpush/daemon/wpns/delivery.rb", "lib/rpush/deprecatable.rb", "lib/rpush/deprecation.rb", "lib/rpush/embed.rb", "lib/rpush/gcm/app.rb", "lib/rpush/gcm/expiry_collapse_key_mutual_inclusion_validator.rb", "lib/rpush/gcm/notification.rb", "lib/rpush/logger.rb", "lib/rpush/multi_json_helper.rb", "lib/rpush/notification.rb", "lib/rpush/notifier.rb", "lib/rpush/orm/active_record.rb", "lib/rpush/orm/mongoid.rb", "lib/rpush/payload_data_size_validator.rb", "lib/rpush/push.rb", "lib/rpush/railtie.rb", "lib/rpush/reflection.rb", "lib/rpush/registration_ids_count_validator.rb", "lib/rpush/version.rb", "lib/rpush/wpns/app.rb", "lib/rpush/wpns/notification.rb", "lib/tasks/cane.rake", "lib/tasks/rpush.rake", "lib/tasks/test.rake", "spec/functional/adm_spec.rb", "spec/functional/apns_spec.rb", "spec/functional/embed_spec.rb", "spec/functional/gcm_spec.rb", "spec/functional/wpns_spec.rb", "spec/functional_spec_helper.rb", "spec/integration/rpush_spec.rb", "spec/integration/support/gcm_success_response.json", "spec/spec_helper.rb", "spec/support/cert_with_password.pem", "spec/support/cert_without_password.pem", "spec/support/install.sh", "spec/support/simplecov_helper.rb", "spec/support/simplecov_quality_formatter.rb", "spec/tmp/.gitkeep", "spec/unit/adm/app_spec.rb", "spec/unit/adm/notification_spec.rb", "spec/unit/apns/app_spec.rb", "spec/unit/apns/feedback_spec.rb", "spec/unit/apns/notification_spec.rb", "spec/unit/apns_feedback_spec.rb", "spec/unit/app_spec.rb", "spec/unit/configuration_spec.rb", "spec/unit/daemon/adm/delivery_spec.rb", "spec/unit/daemon/apns/certificate_expired_error_spec.rb", "spec/unit/daemon/apns/delivery_spec.rb", "spec/unit/daemon/apns/disconnection_error_spec.rb", "spec/unit/daemon/apns/feedback_receiver_spec.rb", "spec/unit/daemon/app_runner_spec.rb", "spec/unit/daemon/batch_spec.rb", "spec/unit/daemon/delivery_error_spec.rb", "spec/unit/daemon/delivery_spec.rb", "spec/unit/daemon/dispatcher/http_spec.rb", "spec/unit/daemon/dispatcher/tcp_spec.rb", "spec/unit/daemon/dispatcher_loop_collection_spec.rb", "spec/unit/daemon/dispatcher_loop_spec.rb", "spec/unit/daemon/feeder_spec.rb", "spec/unit/daemon/gcm/delivery_spec.rb", "spec/unit/daemon/interruptible_sleep_spec.rb", "spec/unit/daemon/reflectable_spec.rb", "spec/unit/daemon/retryable_error_spec.rb", "spec/unit/daemon/service_config_methods_spec.rb", "spec/unit/daemon/store/active_record/reconnectable_spec.rb", "spec/unit/daemon/store/active_record_spec.rb", "spec/unit/daemon/tcp_connection_spec.rb", "spec/unit/daemon/too_many_requests_error_spec.rb", "spec/unit/daemon/wpns/delivery_spec.rb", "spec/unit/daemon_spec.rb", "spec/unit/deprecatable_spec.rb", "spec/unit/deprecation_spec.rb", "spec/unit/embed_spec.rb", "spec/unit/gcm/app_spec.rb", "spec/unit/gcm/notification_spec.rb", "spec/unit/logger_spec.rb", "spec/unit/notification_shared.rb", "spec/unit/notification_spec.rb", "spec/unit/notifier_spec.rb", "spec/unit/push_spec.rb", "spec/unit/reflection_spec.rb", "spec/unit/rpush_spec.rb", "spec/unit/wpns/app_spec.rb", "spec/unit/wpns/notification_spec.rb", "spec/unit_spec_helper.rb"]
+  s.homepage = "https://github.com/rpush/rpush"
+  s.licenses = ["MIT"]
+  s.rubygems_version = "2.4.4"
+  s.summary = "Professional grade APNs and GCM for Ruby"
+  s.test_files = ["config/database.yml", "spec/functional/adm_spec.rb", "spec/functional/apns_spec.rb", "spec/functional/embed_spec.rb", "spec/functional/gcm_spec.rb", "spec/functional/wpns_spec.rb", "spec/functional_spec_helper.rb", "spec/integration/rpush_spec.rb", "spec/integration/support/gcm_success_response.json", "spec/spec_helper.rb", "spec/support/cert_with_password.pem", "spec/support/cert_without_password.pem", "spec/support/install.sh", "spec/support/simplecov_helper.rb", "spec/support/simplecov_quality_formatter.rb", "spec/tmp/.gitkeep", "spec/unit/adm/app_spec.rb", "spec/unit/adm/notification_spec.rb", "spec/unit/apns/app_spec.rb", "spec/unit/apns/feedback_spec.rb", "spec/unit/apns/notification_spec.rb", "spec/unit/apns_feedback_spec.rb", "spec/unit/app_spec.rb", "spec/unit/configuration_spec.rb", "spec/unit/daemon/adm/delivery_spec.rb", "spec/unit/daemon/apns/certificate_expired_error_spec.rb", "spec/unit/daemon/apns/delivery_spec.rb", "spec/unit/daemon/apns/disconnection_error_spec.rb", "spec/unit/daemon/apns/feedback_receiver_spec.rb", "spec/unit/daemon/app_runner_spec.rb", "spec/unit/daemon/batch_spec.rb", "spec/unit/daemon/delivery_error_spec.rb", "spec/unit/daemon/delivery_spec.rb", "spec/unit/daemon/dispatcher/http_spec.rb", "spec/unit/daemon/dispatcher/tcp_spec.rb", "spec/unit/daemon/dispatcher_loop_collection_spec.rb", "spec/unit/daemon/dispatcher_loop_spec.rb", "spec/unit/daemon/feeder_spec.rb", "spec/unit/daemon/gcm/delivery_spec.rb", "spec/unit/daemon/interruptible_sleep_spec.rb", "spec/unit/daemon/reflectable_spec.rb", "spec/unit/daemon/retryable_error_spec.rb", "spec/unit/daemon/service_config_methods_spec.rb", "spec/unit/daemon/store/active_record/reconnectable_spec.rb", "spec/unit/daemon/store/active_record_spec.rb", "spec/unit/daemon/tcp_connection_spec.rb", "spec/unit/daemon/too_many_requests_error_spec.rb", "spec/unit/daemon/wpns/delivery_spec.rb", "spec/unit/daemon_spec.rb", "spec/unit/deprecatable_spec.rb", "spec/unit/deprecation_spec.rb", "spec/unit/embed_spec.rb", "spec/unit/gcm/app_spec.rb", "spec/unit/gcm/notification_spec.rb", "spec/unit/logger_spec.rb", "spec/unit/notification_shared.rb", "spec/unit/notification_spec.rb", "spec/unit/notifier_spec.rb", "spec/unit/push_spec.rb", "spec/unit/reflection_spec.rb", "spec/unit/rpush_spec.rb", "spec/unit/wpns/app_spec.rb", "spec/unit/wpns/notification_spec.rb", "spec/unit_spec_helper.rb"]
 
-  s.add_dependency "multi_json", "~> 1.0"
-  s.add_dependency "net-http-persistent"
+  if s.respond_to? :specification_version then
+    s.specification_version = 4
 
-  if defined? JRUBY_VERSION
-    s.platform = 'java'
-    s.add_dependency "jruby-openssl"
-    s.add_dependency "activerecord-jdbc-adapter"
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<multi_json>, ["~> 1.0"])
+      s.add_runtime_dependency(%q<net-http-persistent>, [">= 0"])
+    else
+      s.add_dependency(%q<multi_json>, ["~> 1.0"])
+      s.add_dependency(%q<net-http-persistent>, [">= 0"])
+    end
+  else
+    s.add_dependency(%q<multi_json>, ["~> 1.0"])
+    s.add_dependency(%q<net-http-persistent>, [">= 0"])
   end
 end
